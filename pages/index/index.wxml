@@ -1,0 +1,75 @@
+<view class="container">
+    <view class="tabel">
+        <view class="tabel-title">
+            <text>请输入如下参数</text>
+        </view>
+        <view class="cell">
+            <view class="cell-lefttext">
+                <text>投资金额</text>
+                <text class="cell-lefttext-red">*</text>
+            </view>
+            <input type="digit" bindinput="inputFn" data-name="money" />
+            <text class="cell-righttext">元</text>
+        </view>
+        <view class="cell">
+            <view class="cell-lefttext">
+                <text>年华收益率</text>
+                <text class="cell-lefttext-red">*</text>
+            </view>
+            <input type="digit" bindinput="inputFn" data-name="falseRate" />
+            <text class="cell-righttext">%</text>
+        </view>
+        <view class="cell">
+            <view class="cell-lefttext">
+                <text>投入时长</text>
+                <text class="cell-lefttext-red">*</text>
+            </view>
+            <input type="digit" bindinput="inputFn" data-name="dateLong" />
+            <view class="cell-righttext" bindtap="selectDateType">
+                <text>{{dayType}}</text>
+                <text class="weui-cell__ft"></text>
+            </view>
+        </view>
+        <view class="cell">
+            <text class="cell-lefttext">损耗天数</text>
+            <input type="digit" bindinput="inputFn" data-name="xxDay" />
+            <text class="cell-righttext">天</text>
+        </view>
+        <view class="cell">
+            <text class="cell-lefttext">损耗金额</text>
+            <input type="digit" bindinput="inputFn" data-name="xxMoney1" />
+            <text class="cell-righttext">元</text>
+        </view>
+    </view>
+    <view class="tabel mt30">
+        <view class="tabel-title">
+            <text>计算结果</text>
+        </view>
+        <view class="cell">
+            <text class="cell-lefttext">预期年化收益率</text>
+            <text class="cell-righttext">{{falseRate}} %</text>
+        </view>
+        <view class="cell">
+            <text class="cell-lefttext">真实年化收益率</text>
+            <text class="cell-righttext">{{trueRate}} %</text>
+        </view>
+        <view class="cell">
+            <text class="cell-lefttext">预期收益</text>
+            <text class="cell-righttext">{{falseIncome}} 元</text>
+        </view>
+        <view class="cell">
+            <text class="cell-lefttext">真实收益</text>
+            <text class="cell-righttext">{{trueIncome}} 元</text>
+        </view>
+    </view>
+    <view class="footbar">
+        <view class="footbar-item active">
+            <image src="../../images/calc.png"/>
+            <text>计算器</text>
+        </view>
+        <view class="footbar-item" bindtap="goAbout">
+            <image src="../../images/about.png"/>
+            <text>说明</text>
+        </view>
+    </view>
+</view>
