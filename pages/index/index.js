@@ -122,23 +122,44 @@ Page({
         }
 
         // 预期收益
-        let falseIncome = amount * (1 + (falseRate / 100) * (dateLong / 365));
+        let falseIncome = amount * falseRate * 0.01 * (dateLong / 365);
 
         // 真实收益(预期收益减去损耗费用)
         let trueIncome = falseIncome - minusMoney;
 
         // 真实利率
-        let trueRate = (trueIncome / ((dateLong + minusDay) / 365)) / amount;
+        let trueRate = trueIncome / (amount * (dateLong + minusDay) / 365) * 1000;
+
+        // console.log('预期收益falseIncome', falseIncome);
+        // console.log('真实收益trueIncome', trueIncome);
+        // console.log('真实利率trueRate', trueRate);
 
         falseIncome = Util.numberComma(falseIncome.toFixed(2));
         trueIncome = Util.numberComma(trueIncome.toFixed(2));
-        trueRate = trueRate.toFixed(2);
+        trueRate = parseFloat(trueRate.toFixed(2));
 
         this.setData({
             falseIncome: falseIncome,
             trueIncome: trueIncome,
             trueRate: trueRate
         });
+    },
+    onShareAppMessage: function() {
+        return {
+            title: '真实理财收益计算器',
+            path: '/pages/index/index',
+            success: function(res) {
+                wx.showToast({
+                    title: '感谢分享',
+                    icon: 'success'
+                });
+            },
+            fail: function(res) {
+                wx.showToast({
+                    title: '分享失败，请重试'
+                });
+            }
+        }
     },
     onLoad() {
         wx.setNavigationBarTitle({
@@ -148,10 +169,9 @@ Page({
         // 测试
         // this.setData({
         //     amount: 10000,
-        //     dateLong: 61,
+        //     dateLong: 30,
         //     falseRate: 9.8,
         // });
-
         // this.calcFn();
 
         // var that = this;

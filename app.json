@@ -4,16 +4,18 @@
         "pages/about/about"
     ],
     "tabBar": {
-      "selectedColor": "#09BB07",
+        "selectedColor": "#09BB07",
         "list": [{
             "iconPath": "images/calc.png",
             "selectedIconPath": "images/calc-active.png",
             "pagePath": "pages/index/index",
+            "color": "#b2b2b2",
             "text": "计算器"
         }, {
             "iconPath": "images/about.png",
             "selectedIconPath": "images/about-active.png",
             "pagePath": "pages/about/about",
+            "color": "#b2b2b2",
             "text": "说明"
         }]
     },

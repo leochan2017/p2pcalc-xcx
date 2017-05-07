@@ -51,6 +51,7 @@
     width: 410rpx;
     margin-left: 10rpx;
     margin-right: 10rpx;
+    text-align: right;
 }
 
 .cell-lefttext {
@@ -114,4 +115,5 @@
 
 .input-placeholder {
     color: #b2b2b2;
+    text-align: left;
 }
