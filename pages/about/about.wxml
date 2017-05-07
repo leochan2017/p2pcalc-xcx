@@ -10,14 +10,4 @@
             </view>
         </view>
     </view>
-    <view class="footbar">
-        <view class="footbar-item" bindtap="navigateBack">
-            <image src="../../images/calc.png" />
-            <text>计算器</text>
-        </view>
-        <view class="footbar-item active">
-            <image src="../../images/about.png" />
-            <text>说明</text>
-        </view>
-    </view>
 </view>

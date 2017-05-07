@@ -16,6 +16,13 @@ function formatNumber(n) {
     return n[1] ? n : '0' + n
 }
 
+function numberComma(source, length = 3) {
+    source = String(source).split(".");
+    source[0] = source[0].replace(new RegExp('(\\d)(?=(\\d{' + length + '})+$)', 'ig'), "$1,");
+    return source.join(".");
+}
+
 module.exports = {
-    formatTime: formatTime
+    formatTime: formatTime,
+    numberComma: numberComma
 }

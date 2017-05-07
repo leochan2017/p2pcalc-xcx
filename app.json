@@ -1,12 +1,27 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/about/about"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "pages": [
+        "pages/index/index",
+        "pages/about/about"
+    ],
+    "tabBar": {
+      "selectedColor": "#09BB07",
+        "list": [{
+            "iconPath": "images/calc.png",
+            "selectedIconPath": "images/calc-active.png",
+            "pagePath": "pages/index/index",
+            "text": "计算器"
+        }, {
+            "iconPath": "images/about.png",
+            "selectedIconPath": "images/about-active.png",
+            "pagePath": "pages/about/about",
+            "text": "说明"
+        }]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#F6F6F6"
+    }
 }

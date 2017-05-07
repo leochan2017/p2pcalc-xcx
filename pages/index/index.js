@@ -1,9 +1,8 @@
-//index.js
-//获取应用实例
-var app = getApp();
+const Util = require('../../utils/util.js');
+// var app = getApp();
 Page({
     data: {
-        money: 0,
+        amount: 0,
         dayType: '天',
         dateLong: 0,
         // 各种期
@@ -19,11 +18,6 @@ Page({
         trueRate: 0,
         // 真实收益
         trueIncome: 0
-    },
-    goAbout() {
-        wx.navigateTo({
-            url: '../about/about'
-        });
     },
     // 选择时长单位
     selectDateType() {
@@ -61,9 +55,9 @@ Page({
             val = e.detail.value;
 
         switch (name) {
-            case 'money':
+            case 'amount':
                 obj = {
-                    money: val
+                    amount: val
                 };
                 break;
             case 'falseRate':
@@ -93,7 +87,7 @@ Page({
         this.calcFn(); // 因为有微信的数字键盘，所以很放心不用担心输入不是数字？
     },
     calcFn() {
-        let money = this.data.money,
+        let amount = this.data.amount,
             falseRate = this.data.falseRate,
             dateLong = this.data.dateLong, // 投入时长，默认计算单位：天
             xxMoney1 = this.data.xxMoney1,
@@ -102,7 +96,7 @@ Page({
             minusDay = 0, // 各种要减的天
             minusMoney = 0; // 各种要减的钱
 
-        if (money == 0 || falseRate == 0 || dateLong == 0 || isNaN(dateLong)) {
+        if (amount == 0 || falseRate == 0 || dateLong == 0 || isNaN(dateLong)) {
             this.setData({
                 falseIncome: 0,
                 trueIncome: 0,
@@ -128,13 +122,17 @@ Page({
         }
 
         // 预期收益
-        let falseIncome = (money * falseRate * 0.01 * (dateLong / 365)).toFixed(2);
+        let falseIncome = amount * (1 + (falseRate / 100) * (dateLong / 365));
 
         // 真实收益(预期收益减去损耗费用)
-        let trueIncome = (falseIncome - minusMoney).toFixed(2);
+        let trueIncome = falseIncome - minusMoney;
 
         // 真实利率
-        let trueRate = ((trueIncome / ((dateLong + minusDay) / 365)) / money * 1000).toFixed(2);
+        let trueRate = (trueIncome / ((dateLong + minusDay) / 365)) / amount;
+
+        falseIncome = Util.numberComma(falseIncome.toFixed(2));
+        trueIncome = Util.numberComma(trueIncome.toFixed(2));
+        trueRate = trueRate.toFixed(2);
 
         this.setData({
             falseIncome: falseIncome,
@@ -143,7 +141,19 @@ Page({
         });
     },
     onLoad() {
-        console.log('onLoad');
+        wx.setNavigationBarTitle({
+            title: '真实理财收益计算器'
+        });
+
+        // 测试
+        // this.setData({
+        //     amount: 10000,
+        //     dateLong: 61,
+        //     falseRate: 9.8,
+        // });
+
+        // this.calcFn();
+
         // var that = this;
         // //调用应用实例的方法获取全局数据
         // app.getUserInfo(function(userInfo) {
