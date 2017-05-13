@@ -1,12 +1,10 @@
-<view class="container">
-    <view class="tabel">
-        <view class="tabel-title">
-            <text>各种乱写的说明</text>
-        </view>
-        <view class="cell" wx:for="{{faqList}}" data-index="{{index}}" bindtap="showHelp">
-            <text class="cell-lefttext">{{item.title}}</text>
-            <view class="cell-righttext">
-                <text class="weui-cell__ft"></text>
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-cells__title">各种乱写的说明</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{faqList}}" data-index="{{index}}" bindtap="showHelp">
+                <view class="weui-cell__bd">{{item.title}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </view>
         </view>
     </view>

@@ -128,15 +128,19 @@ Page({
         let trueIncome = falseIncome - minusMoney;
 
         // 真实利率
-        let trueRate = trueIncome / (amount * (dateLong + minusDay) / 365) * 1000;
-
+        // 如果没有各种扣扣扣，为了不让计算真实利率的公式出错。直接等于预期利率
+        let trueRate = falseRate;
+        if (falseIncome != trueIncome || minusDay > 0) {
+            trueRate = trueIncome / (amount * (dateLong + minusDay) / 365) * 1000;
+            trueRate = parseFloat(trueRate.toFixed(2));
+        }
+        
         // console.log('预期收益falseIncome', falseIncome);
         // console.log('真实收益trueIncome', trueIncome);
         // console.log('真实利率trueRate', trueRate);
 
         falseIncome = Util.numberComma(falseIncome.toFixed(2));
         trueIncome = Util.numberComma(trueIncome.toFixed(2));
-        trueRate = parseFloat(trueRate.toFixed(2));
 
         this.setData({
             falseIncome: falseIncome,
@@ -146,7 +150,7 @@ Page({
     },
     onShareAppMessage: function() {
         return {
-            title: '真实理财收益计算器',
+            title: '你可能看到的是假收益',
             path: '/pages/index/index',
             success: function(res) {
                 wx.showToast({

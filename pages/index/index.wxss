@@ -1,33 +1,23 @@
-/*.calcres-hr {
-    display: table;
-    white-space: nowrap;
-    height: auto;
-    overflow: hidden;
-    line-height: 1;
-    text-align: center;
-    padding: 10px 0;
-    color: #666;
+/*向右的箭头*/
+
+.leo-right-jiantou {
+    padding-right: 10rpx;
 }
 
-.calcres-hr:before {
-    background-position: right 1em top 50%;
-    content: "";
-    display: table-cell;
+.leo-right-jiantou::after {
+    content: " ";
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    border-width: 2px 2px 0 0;
+    border-color: #C8C8CD;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
     position: relative;
+    top: -2px;
+    position: absolute;
     top: 50%;
-    width: 50%;
-    background-repeat: no-repeat;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAACCAYAAACuTHuKAAAAGXRFW…GBJQby/mUcJn5sJXQmOQMAAAAAAJqt+2prAAAAAACg2xdgANk6BEVuJgyMAAAAAElFTkSuQmCC);
+    right: 10px;
+    margin-top: -4px;
 }
-
-.calcres-hr:after {
-    background-position: left 1em top 50%;
-    content: "";
-    display: table-cell;
-    position: relative;
-    top: 50%;
-    width: 50%;
-    background-repeat: no-repeat;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAACCAYAAACuTHuKAAAAGXRFW…GBJQby/mUcJn5sJXQmOQMAAAAAAJqt+2prAAAAAACg2xdgANk6BEVuJgyMAAAAAElFTkSuQmCC);
-}
-*/
