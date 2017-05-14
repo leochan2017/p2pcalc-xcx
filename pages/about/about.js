@@ -43,6 +43,11 @@ Page({
             }
         }
     },
+    aboutMe() {
+        wx.navigateTo({
+            url: '../leo/leo'
+        });
+    },
     onLoad() {
         wx.setNavigationBarTitle({
             title: '说明'
