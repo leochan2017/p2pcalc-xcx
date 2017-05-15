@@ -1,5 +1,14 @@
 Page({
-    data: {
+    data: {},
+    payMeMoney() {
+        wx.previewImage({
+            urls: ['http://www.leojs.com/pay-me-money.jpg']
+        });
+
+        wx.setStorage({
+            key: 'isPayLeoMoney',
+            data: true
+        });
     },
     onShareAppMessage: function() {
         return {
@@ -23,4 +32,4 @@ Page({
             title: '关于'
         });
     }
-})
+});

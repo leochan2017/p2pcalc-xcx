@@ -1,8 +1,8 @@
 {
     "pages": [
-        "pages/leo/leo",
         "pages/index/index",
-        "pages/about/about"
+        "pages/about/about",
+        "pages/leo/leo"
     ],
     "tabBar": {
         "selectedColor": "#09BB07",

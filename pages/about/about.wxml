@@ -9,7 +9,7 @@
             <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="aboutMe">
                 <view class="weui-cell__bd">关于</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
-                    <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view>
+                    <view hidden="{{isPayLeoMoney}}" class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view>
                 </view>
             </view>
         </view>

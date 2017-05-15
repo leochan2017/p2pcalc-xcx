@@ -1,5 +1,6 @@
 Page({
     data: {
+        isPayLeoMoney: false,
         faqList: [{
             title: '什么是损耗天数？',
             content: '指一般的理财产品的认购期，清算期，提现到帐等等。这期间的本金是不计算收益的。如没有则不填写。'
@@ -48,9 +49,35 @@ Page({
             url: '../leo/leo'
         });
     },
+    // 检查是否需要出现红点
+    checkBadgeDot() {
+        let that = this;
+
+        wx.getStorage({
+            key: 'isPayLeoMoney',
+            success(res) {
+                let val = false;
+
+                if (res.data) {
+                    val = true;
+                }
+
+                that.setData({
+                    'isPayLeoMoney': val
+                });
+            },
+            fail(err) {
+                that.setData({
+                    'isPayLeoMoney': false
+                });
+            }
+        });
+    },
     onLoad() {
         wx.setNavigationBarTitle({
             title: '说明'
         });
+
+        this.checkBadgeDot();
     }
 })
