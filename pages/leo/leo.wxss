@@ -30,5 +30,5 @@
 .detail {
     font-size: 34rpx;
     color: #888;
-    margin-bottom: 60rpx;
+    margin-bottom: 70rpx;
 }

@@ -13,6 +13,9 @@
             <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeMoney">打赏作者
             </button>
         </view>
+        <view class="detail">
+            <text>(打赏过后红点就消失哦)</text>
+        </view>
     </view>
     <view class="weui-footer weui-footer_fixed-bottom">
         <view class="weui-footer__text">
