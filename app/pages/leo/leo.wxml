@@ -4,18 +4,28 @@
             <image src="../../images/logo.png"></image>
         </view>
         <view class="title">
-            <text>理财收益计算器 v1.1</text>
+            <text>理财收益计算器 v1.2</text>
         </view>
         <view class="detail">
             <text>还你真实的数值</text>
         </view>
-        <view>
-            <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeMoney">打赏作者
-            </button>
+        <view class="payButton">
+            <view>
+                <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeMoney">微信打赏
+                </button>
+            </view>
+            <view hidden="{{!canUseSetClipboardData}}">
+                <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeBtc">BTC打赏
+                </button>
+            </view>
+            <view hidden="{{!canUseSetClipboardData}}">
+                <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeEth">ETH打赏(ERC20系列)
+                </button>
+            </view>
         </view>
-        <view class="detail">
+        <!-- <view class="detail">
             <text>(打赏过后红点就消失哦)</text>
-        </view>
+        </view> -->
     </view>
     <view class="weui-footer weui-footer_fixed-bottom">
         <view class="weui-footer__text">
