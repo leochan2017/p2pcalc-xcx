@@ -25,3 +25,6 @@
 
 ### 说明弹窗
 ![截图4](https://github.com/leochan2017/p2pcalc-xcx/blob/master/%E7%B4%A0%E6%9D%90/%E6%88%AA%E5%9B%BE/4.png?raw=true)
+
+# 还有另一个网页版
+[https://github.com/leochan2017/p2pcalc](https://github.com/leochan2017/p2pcalc)
