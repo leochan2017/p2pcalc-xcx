@@ -1,5 +1,5 @@
 # 理财收益计算器 (小程序版)
-小程序: 理财收益计算器
+微信小程序: 理财收益计算器
 
 # 设计初衷
 一般的理财产品大多都不像银行定期那样当天存款当天计息，到期就还本还息。一般的理财产品都有各种XX期，而这期间的本金是不计算收益的。
@@ -10,10 +10,10 @@
 
 所以看年化收益率，绝对不是看他声称的数字，而要看实际的收入数字。这个时候，我感觉你可能需要用这个计算器来看出来真实的数值了
 
-# QR Code
+# 微信扫码体验
 ![QR CODE](https://github.com/leochan2017/p2pcalc-xcx/blob/master/%E7%B4%A0%E6%9D%90/gh_cfc6dc4a1bc8_258.jpg?raw=true)
 
-# 截图
+# 运行截图
 ### 首页
 ![截图1](https://github.com/leochan2017/p2pcalc-xcx/blob/master/%E7%B4%A0%E6%9D%90/%E6%88%AA%E5%9B%BE/1.png?raw=true)
 
