@@ -4,7 +4,7 @@
             <image src="../../images/logo.png"></image>
         </view>
         <view class="title">
-            <text>理财收益计算器 v1.2</text>
+            <text>理财收益计算器 v1.3</text>
         </view>
         <view class="detail">
             <text>还你真实的数值</text>
@@ -35,10 +35,7 @@
             如果你有好的意见或建议, 欢迎给我:
         </view>
         <view class="weui-footer__text">
-            Email: Leochan2017@gmail.com
-        </view>
-        <view class="weui-footer__text">
-            issue or pull request: https://github.com/leochan2017/p2pcalc-xcx
+            issue: https://github.com/leochan2017/p2pcalc-xcx
         </view>
     </view>
 </view>

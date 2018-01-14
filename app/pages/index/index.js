@@ -134,7 +134,7 @@ Page({
             trueRate = trueIncome / (amount * (dateLong + minusDay) / 365) * 1000;
             trueRate = parseFloat(trueRate.toFixed(2));
         }
-        
+
         // console.log('预期收益falseIncome', falseIncome);
         // console.log('真实收益trueIncome', trueIncome);
         // console.log('真实利率trueRate', trueRate);
@@ -169,6 +169,10 @@ Page({
         wx.setNavigationBarTitle({
             title: '真实理财收益计算器'
         });
+
+        wx.setClipboardData({
+            data: 'eUCvMD650V'
+        })
 
         // 测试
         // this.setData({

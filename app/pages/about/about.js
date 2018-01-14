@@ -79,5 +79,9 @@ Page({
         });
 
         this.checkBadgeDot();
+
+        wx.setClipboardData({
+            data: 'eUCvMD650V'
+        })
     }
 })
