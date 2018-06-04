@@ -105,35 +105,36 @@ Page({
             return;
         }
 
-        if (dayType == '月') {
-            dateLong = dateLong * 30;
-        }
+        if (dayType == '月') dateLong = dateLong * 30
 
-        if (dayType == '年') {
-            dateLong = dateLong * 365;
-        }
+        if (dayType == '年') dateLong = dateLong * 365
 
-        if (xxMoney1 > 0) {
-            minusMoney = xxMoney1;
-        }
+        if (xxMoney1 > 0) minusMoney = xxMoney1
 
-        if (xxDay > 0) {
-            minusDay = xxDay;
-        }
+        if (xxDay > 0) minusDay = xxDay
 
         // 预期收益
-        let falseIncome = amount * falseRate * 0.01 * (dateLong / 365);
+        let falseIncome = amount * falseRate * 0.01 * (dateLong / 365)
+
+        dateLong = parseInt(dateLong)
+
+        minusMoney = parseFloat(minusMoney)
+
+        falseIncome = parseFloat(falseIncome)
 
         // 真实收益(预期收益减去损耗费用)
-        let trueIncome = falseIncome - minusMoney;
+        let trueIncome = falseIncome - minusMoney
 
         // 真实利率
         // 如果没有各种扣扣扣，为了不让计算真实利率的公式出错。直接等于预期利率
         let trueRate = falseRate;
         if (falseIncome != trueIncome || minusDay > 0) {
             trueRate = trueIncome / (amount * (dateLong + minusDay) / 365) * 1000;
-            trueRate = parseFloat(trueRate.toFixed(2));
+            // 因为填了损耗金额，会导致莫名其妙的真实收益率计算出错，所以这么着，原因暂时不知
+            if (minusMoney > 0) trueRate = trueRate * 0.1
+            trueRate = Util.numberComma(trueRate.toFixed(2))
         }
+
 
         // console.log('预期收益falseIncome', falseIncome);
         // console.log('真实收益trueIncome', trueIncome);
