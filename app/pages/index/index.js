@@ -172,7 +172,7 @@ Page({
         });
 
         wx.setClipboardData({
-            data: 'eUCvMD650V'
+            data: 'MNqe5S65S8'
         })
 
         // 测试
