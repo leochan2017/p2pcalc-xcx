@@ -177,7 +177,9 @@ Page({
 
                 wx.setClipboardData({
                     data: clipboardData,
-                    success: function() {}
+                    success: function() {
+                        wx.hideLoading()
+                    }
                 })
             }
         })
