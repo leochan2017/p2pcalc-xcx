@@ -96,5 +96,7 @@
             </view>
         </view>
     </view>
-    <ad class="page_bottom_ad" unit-id="adunit-d28f2f31250814ba"></ad>
+    <view class="leo-ad-comm">
+        <ad unit-id="adunit-d28f2f31250814ba"></ad>
+    </view>
 </view>

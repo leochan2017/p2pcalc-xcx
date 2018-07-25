@@ -1,4 +1,5 @@
 <view class="page">
+    <ad unit-id="adunit-d28f2f31250814ba" style="margin-bottom: 10rpx;"></ad>
     <view class="page__bd">
         <!-- <view class="weui-cells__title">各种乱写的说明</view> -->
         <view class="weui-cells weui-cells_after-title">
