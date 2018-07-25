@@ -67,7 +67,6 @@
                 </view>
             </view>
         </view>
-       
     </view>
     <!-- 计算结果 -->
     <view class="page__bd" hidden="{{amount == 0 || dateLong == 0 || falseRate == 0}}">
@@ -97,4 +96,5 @@
             </view>
         </view>
     </view>
+    <ad class="page_bottom_ad" unit-id="adunit-d28f2f31250814ba"></ad>
 </view>
