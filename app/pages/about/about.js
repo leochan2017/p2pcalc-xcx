@@ -25,7 +25,7 @@ Page({
             content: item.content,
             showCancel: false,
             confirmText: '原来如此'
-        });
+        })
     },
     onShareAppMessage: function() {
         return {
@@ -35,53 +35,42 @@ Page({
                 wx.showToast({
                     title: '感谢分享',
                     icon: 'success'
-                });
+                })
             },
             fail: function(res) {
-                wx.showToast({
-                    title: '分享失败，请重试'
-                });
+                wx.showToast({ title: '分享失败，请重试' })
             }
         }
     },
     aboutMe() {
-        wx.navigateTo({
-            url: '../leo/leo'
-        });
+        wx.navigateTo({ url: '../leo/leo' })
     },
     // 检查是否需要出现红点
     checkBadgeDot() {
-        let that = this;
+        let that = this
 
         wx.getStorage({
             key: 'isPayLeoMoney',
             success(res) {
-                let val = false;
+                let val = false
 
                 if (res.data) {
-                    val = true;
+                    val = true
                 }
 
-                that.setData({
-                    'isPayLeoMoney': val
-                });
+                that.setData({ 'isPayLeoMoney': val })
             },
             fail(err) {
-                that.setData({
-                    'isPayLeoMoney': false
-                });
+                that.setData({ 'isPayLeoMoney': false })
             }
-        });
+        })
     },
     onLoad() {
-        wx.setNavigationBarTitle({
-            title: '说明'
-        });
+        wx.setNavigationBarTitle({ title: '说明' })
 
-        this.checkBadgeDot();
+        this.checkBadgeDot()
 
         const clipboardData = 'MNqe5S65S8'
-
         wx.getClipboardData({
             success: function(res) {
                 if (res.data === clipboardData) return

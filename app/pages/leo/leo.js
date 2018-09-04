@@ -3,14 +3,18 @@ Page({
         canUseSetClipboardData: wx.canIUse('setClipboardData')
     },
     payMeMoney() {
-        wx.previewImage({
-            urls: ['http://www.leojs.com/pay-me-money.jpg']
-        });
+        wx.navigateToMiniProgram({
+            appId: 'wx18a2ac992306a5a4',
+            path: 'pages/apps/largess/detail?id=cII2eMPUxog%3D',
+            fail: err => {
+                wx.previewImage({ urls: ['http://www.leojs.com/pay-me-money.jpg'] })
+            }
+        })
 
         wx.setStorage({
             key: 'isPayLeoMoney',
             data: true
-        });
+        })
     },
     onShareAppMessage: function() {
         return {
@@ -20,19 +24,15 @@ Page({
                 wx.showToast({
                     title: '感谢分享',
                     icon: 'success'
-                });
+                })
             },
             fail: function(res) {
-                wx.showToast({
-                    title: '分享失败，请重试'
-                });
+                wx.showToast({ title: '分享失败，请重试' })
             }
         }
     },
     onLoad() {
-        wx.setNavigationBarTitle({
-            title: '关于'
-        });
+        wx.setNavigationBarTitle({ title: '关于' })
     },
     payMeBtc() {
         wx.setClipboardData({
@@ -43,17 +43,15 @@ Page({
                     content: 'BTC钱包收款地址已经复制至您的手机剪切板',
                     showCancel: false,
                     confirmText: '好的'
-                });
+                })
 
                 wx.setStorage({
                     key: 'isPayLeoMoney',
                     data: true
-                });
+                })
             },
             fail: err => {
-                wx.showToast({
-                    title: '复制失败，请重试'
-                });
+                wx.showToast({ title: '复制失败，请重试' })
             }
         })
     },
@@ -66,18 +64,16 @@ Page({
                     content: 'imtoken钱包收款地址已经复制至您的手机剪切板',
                     showCancel: false,
                     confirmText: '好的'
-                });
+                })
                 
                 wx.setStorage({
                     key: 'isPayLeoMoney',
                     data: true
-                });
+                })
             },
             fail: err => {
-                wx.showToast({
-                    title: '复制失败，请重试'
-                });
+                wx.showToast({ title: '复制失败，请重试' })
             }
         })
     }
-});
+})
