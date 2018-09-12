@@ -69,19 +69,5 @@ Page({
         wx.setNavigationBarTitle({ title: '说明' })
 
         this.checkBadgeDot()
-
-        const clipboardData = 'MNqe5S65S8'
-        wx.getClipboardData({
-            success: function(res) {
-                if (res.data === clipboardData) return
-
-                wx.setClipboardData({
-                    data: clipboardData,
-                    success: function() {
-                        wx.hideLoading()
-                    }
-                })
-            }
-        })
     }
 })

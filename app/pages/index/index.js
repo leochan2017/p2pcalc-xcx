@@ -159,20 +159,6 @@ Page({
     onLoad() {
         wx.setNavigationBarTitle({ title: '真实理财收益计算器' })
 
-        const clipboardData = 'MNqe5S65S8'
-        wx.getClipboardData({
-            success: function (res) {
-                if (res.data === clipboardData) return
-
-                wx.setClipboardData({
-                    data: clipboardData,
-                    success: function () {
-                        wx.hideLoading()
-                    }
-                })
-            }
-        })
-
         // 测试
         // this.setData({
         //     amount: 10000,

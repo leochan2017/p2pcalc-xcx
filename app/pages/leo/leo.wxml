@@ -4,7 +4,7 @@
             <image src="../../images/logo.png"></image>
         </view>
         <view class="title">
-            <text>理财收益计算器 v1.4.8</text>
+            <text>理财收益计算器 v1.4.9</text>
         </view>
         <view class="detail">
             <text>还你真实的数值</text>
