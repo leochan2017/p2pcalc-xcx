@@ -45,6 +45,15 @@ Page({
     aboutMe() {
         wx.navigateTo({ url: '../leo/leo' })
     },
+    goMore() {
+        wx.navigateToMiniProgram({
+            appId: 'wx18a2ac992306a5a4',
+            path: 'pages/miniApps/miniApps',
+            fail: err => {
+                wx.showToast({ title: '失败了，别点了' })
+            }
+        })
+    },
     // 检查是否需要出现红点
     checkBadgeDot() {
         let that = this
