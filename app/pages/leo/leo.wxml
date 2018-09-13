@@ -4,7 +4,7 @@
             <image src="../../images/logo.png"></image>
         </view>
         <view class="title">
-            <text>理财收益计算器 v1.5.0</text>
+            <text>理财收益计算器 v1.5.1</text>
         </view>
         <view class="detail">
             <text>还你真实的数值</text>
@@ -14,12 +14,12 @@
                 <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeMoney">微信打赏
                 </button>
             </view>
-            <view hidden="{{!canUseSetClipboardData}}">
+            <!-- <view hidden="{{!canUseSetClipboardData}}">
                 <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeBtc">BTC打赏
                 </button>
-            </view>
+            </view> -->
             <view hidden="{{!canUseSetClipboardData}}">
-                <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeEth">ETH打赏(ERC20系列)
+                <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeEth">ETH打赏
                 </button>
             </view>
         </view>
