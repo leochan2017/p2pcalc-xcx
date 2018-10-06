@@ -1,4 +1,7 @@
+const Util = require('../../utils/util.js')
 Page({
+    // 定义转发
+    onShareAppMessage: Util.shareConfig,
     data: {
         isPayLeoMoney: false,
         faqList: [{
@@ -13,6 +16,9 @@ Page({
         }, {
             title: '为什么要做这个计算器？',
             content: '一般的理财产品大多都不是到期就还本还息。一般的理财产品都有各种XX期，而这期间的本金是不计算收益的。假设你买了某某理财10万元，号称91天的年化收益率是3.1%。假设认购期5天，到期后提现又5天，那么你实际就被占用了10天的资金所以收益就是:772.88*365/(101*10万)=2.79%。绝对收益是772.88/10万=0.7728%。如果期限较长的理财产品这些认购期，清算期这样的时间也许可以忽略不计。总的来说，年化收益率，绝对不是看他声称的数字，而要看实际的收入数字。'
+        }, {
+            title: '公众号关联本小程序',
+            content: '欢迎关联本小程序，AppID(小程序ID): wx540226fe722e5773'
         }]
     },
     showHelp(e) {
@@ -26,21 +32,6 @@ Page({
             showCancel: false,
             confirmText: '原来如此'
         })
-    },
-    onShareAppMessage: function() {
-        return {
-            title: '真实理财收益计算器',
-            path: '/pages/index/index',
-            success: function(res) {
-                wx.showToast({
-                    title: '感谢分享',
-                    icon: 'success'
-                })
-            },
-            fail: function(res) {
-                wx.showToast({ title: '分享失败，请重试' })
-            }
-        }
     },
     aboutMe() {
         wx.navigateTo({ url: '../leo/leo' })

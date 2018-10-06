@@ -1,6 +1,8 @@
 const Util = require('../../utils/util.js')
 // var app = getApp()
 Page({
+    // 定义转发
+    onShareAppMessage: Util.shareConfig,
     data: {
         amount: 0,
         dayType: '天',
@@ -139,25 +141,8 @@ Page({
             trueRate: trueRate
         })
     },
-    onShareAppMessage: function () {
-        return {
-            title: '你可能看到的是假收益',
-            path: '/pages/index/index',
-            success: function (res) {
-                wx.showToast({
-                    title: '感谢分享',
-                    icon: 'success'
-                })
-            },
-            fail: function (res) {
-                wx.showToast({
-                    title: '分享失败，请重试'
-                })
-            }
-        }
-    },
     onLoad() {
-        wx.setNavigationBarTitle({ title: '真实理财收益计算器' })
+        wx.setNavigationBarTitle({ title: '网贷收益计算器' })
 
         // 测试
         // this.setData({
