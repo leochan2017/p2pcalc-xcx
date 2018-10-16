@@ -10,7 +10,6 @@ Page({
             appId: 'wx18a2ac992306a5a4',
             path: 'pages/apps/largess/detail?id=cII2eMPUxog%3D',
             success: succ => {
-                console.log('succ')
                 wx.setStorage({
                     key: 'isPayLeoMoney',
                     data: true
