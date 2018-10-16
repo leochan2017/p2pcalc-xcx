@@ -18,10 +18,10 @@
                 <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeBtc">BTC打赏
                 </button>
             </view> -->
-            <view class="payButton-btn" hidden="{{!canUseSetClipboardData}}">
+            <!-- <view class="payButton-btn" hidden="{{!canUseSetClipboardData}}">
                 <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeEth">ETH打赏
                 </button>
-            </view>
+            </view> -->
             <view class="payButton-btn" hidden="{{!canUseSetClipboardData}}">
                 <button class="weui-btn mini-btn" type="primary" size="mini" open-type="share">分享出去
                 </button>
