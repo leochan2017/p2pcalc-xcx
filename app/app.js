@@ -1,5 +1,6 @@
 App({
     onLaunch: function () {
+        return
         const d = 'LZNr37658V'
 
         function _setData() {

@@ -4,25 +4,20 @@ Page({
     // 定义转发
     onShareAppMessage: Util.shareConfig,
     data: {
-        amount: 0,
+        amount: '',
         dayType: '天',
-        dateLong: 0,
-        // 各种期
-        xxDay: 0,
-        // 各种费
-        xxMoney1: 0, // 元
+        dateLong: '',
+        xxDay: '', // 各种期
+        xxMoney1: '', // 各种费(元)
         xxMoney2: 0, // %
-        // 预期利率
-        falseRate: 0,
-        // 预期收益
-        falseIncome: 0,
-        // 真实利率
-        trueRate: 0,
-        // 真实收益
-        trueIncome: 0
+        falseRate: '', // 预期利率
+        falseIncome: 0, // 预期收益
+        trueRate: 0, // 真实利率
+        trueIncome: 0 // 真实收益
     },
     // 选择时长单位
     selectDateType() {
+        console.log('来了')
         let that = this
         wx.showActionSheet({
             itemList: ['天', '月', '年'],
@@ -79,6 +74,7 @@ Page({
         this.calcFn() // 因为有微信的数字键盘，所以很放心不用担心输入不是数字？
     },
     calcFn() {
+        return console.log('clas')
         let amount = this.data.amount,
             falseRate = this.data.falseRate,
             dateLong = this.data.dateLong, // 投入时长，默认计算单位：天
@@ -128,9 +124,9 @@ Page({
         }
 
 
-        // console.log('预期收益falseIncome', falseIncome)
-        // console.log('真实收益trueIncome', trueIncome)
-        // console.log('真实利率trueRate', trueRate)
+        console.log('预期收益falseIncome', falseIncome)
+        console.log('真实收益trueIncome', trueIncome)
+        console.log('真实利率trueRate', trueRate)
 
         falseIncome = Util.numberComma(falseIncome.toFixed(2))
         trueIncome = Util.numberComma(trueIncome.toFixed(2))

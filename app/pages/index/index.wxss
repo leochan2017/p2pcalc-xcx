@@ -27,3 +27,8 @@
     height: 30px!important;
     margin-top: 3px!important;
 }
+
+
+.calc-btn {
+    width: 92%;
+}
