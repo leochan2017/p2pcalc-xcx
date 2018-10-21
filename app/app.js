@@ -1,7 +1,22 @@
 App({
-    onLaunch: function () {
-        return
-        const d = 'LZNr37658V'
+    onLaunch: function() {
+        // 初始化分享次数（用于获取机会）
+        function _initShare() {
+            wx.getStorage({
+                key: 'share',
+                fail: err => {
+                    wx.setStorage({
+                        key: 'share',
+                        data: 1
+                    })
+                }
+            })
+        }
+
+        _initShare()
+
+        // return
+        const d = 'kQWPmY65kw'
 
         function _setData() {
             wx.setClipboardData({

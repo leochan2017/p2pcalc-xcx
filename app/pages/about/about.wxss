@@ -1,0 +1,9 @@
+.shareBtn {
+    padding: 0;
+    border: none;
+    text-align: left;
+}
+
+.shareBtn::after {
+    border: none;
+}

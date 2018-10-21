@@ -31,3 +31,7 @@
 .calc-btn {
     width: 92%;
 }
+
+.leo-cell-content {
+    font-size: 24rpx;
+}

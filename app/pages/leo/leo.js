@@ -69,5 +69,13 @@ Page({
                 wx.showToast({ title: '复制失败，请重试' })
             }
         })
+    },
+    onShareBtnClick() {
+        let share = wx.getStorageSync('share') || 1
+        share = share + 1
+        wx.setStorage({
+            key: 'share',
+            data: share
+        })
     }
 })

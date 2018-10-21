@@ -1,5 +1,5 @@
 import Dialog from '../../lib/vant-weapp/dialog/dialog'
-import Notify from '../../lib/vant-weapp/notify/notify';
+import Notify from '../../lib/vant-weapp/notify/notify'
 const Util = require('../../utils/util.js')
 Page({
     // 定义转发
@@ -11,7 +11,9 @@ Page({
             falseRate: '',
             dateLong: ''
         },
-        popupShow: false,
+        popupResultShow: false, // 结果页浮层
+        use: 0, // 使用次数
+        popupShareShow: false, // 分享页浮层
         amount: '',
         dayType: '天',
         dateLong: '',
@@ -23,35 +25,48 @@ Page({
         trueRate: 0, // 真实利率
         trueIncome: 0 // 真实收益
     },
-    // 选择时长单位
-    selectDateType() {
-        console.log('来了')
-        wx.showActionSheet({
-            itemList: ['天', '月', '年'],
-            success: res => {
-                console.log(res)
-                let dayType = this.dayType
-
-                switch (res.tapIndex) {
-                    case 0:
-                        dayType = '天'
-                        break
-                    case 1:
-                        dayType = '月'
-                        break
-                    case 2:
-                        dayType = '年'
-                        break
-                }
-
-                this.setData({
-                    dayType
-                })
-
-                // that.calcFn()
-            }
+    onLoad() {
+        wx.setNavigationBarTitle({
+            title: '网贷收益计算器'
         })
+
+        // dev code
+        // this.setData({
+        //     amount: 100000,
+        //     dateLong: 30,
+        //     falseRate: 9.8
+        // })
+        // this.calcFn()
     },
+    // 选择时长单位
+    // selectDateType() {
+    //     console.log('来了')
+    //     wx.showActionSheet({
+    //         itemList: ['天', '月', '年'],
+    //         success: res => {
+    //             console.log(res)
+    //             let dayType = this.dayType
+
+    //             switch (res.tapIndex) {
+    //                 case 0:
+    //                     dayType = '天'
+    //                     break
+    //                 case 1:
+    //                     dayType = '月'
+    //                     break
+    //                 case 2:
+    //                     dayType = '年'
+    //                     break
+    //             }
+
+    //             this.setData({
+    //                 dayType
+    //             })
+
+    //             // that.calcFn()
+    //         }
+    //     })
+    // },
     // 输入完毕调用
     inputFn(e) {
         // console.log(e)
@@ -60,6 +75,33 @@ Page({
         this.setData({
             [name]: val
         })
+    },
+    // 检查还有没有机会
+    checkChance() {
+        let use = wx.getStorageSync('use') || 0 // 已用次数
+        let share = wx.getStorageSync('share') || 1 // 分享次数
+
+        this.setData({
+            use
+        })
+
+        // 每分享一次，增加10次机会
+        if (use >= (share * 10)) {
+            this.setData({
+                popupShareShow: true
+            })
+            return false
+        }
+
+        use = use + 1
+
+        wx.setStorage({
+            key: 'use',
+            data: use
+        })
+
+
+        return true
     },
     checkData() {
         const data = this.data
@@ -109,6 +151,10 @@ Page({
     calcFn() {
         if (!this.checkData()) {
             Notify('信息输入有误，请检查')
+            return
+        }
+
+        if (!this.checkChance()) {
             return
         }
 
@@ -169,19 +215,7 @@ Page({
             falseIncome: falseIncome,
             trueIncome: trueIncome,
             trueRate: trueRate,
-            popupShow: true
-        })
-    },
-    onLoad() {
-        wx.setNavigationBarTitle({
-            title: '网贷收益计算器'
-        })
-
-        // 测试
-        this.setData({
-            amount: 100000,
-            dateLong: 30,
-            falseRate: 9.8
+            popupResultShow: true
         })
     },
     showTips(e) {
@@ -201,19 +235,34 @@ Page({
         }
         Dialog.alert({
             title, message
-        })
+        }).then(() => {})
     },
     onTabbarChange(event) {
         // console.log(event.detail)
         if (event.detail === 1) {
-            wx.navigateTo({
+            wx.redirectTo({
                 url: '../about/about'
             })
         }
     },
     onPopupClose() {
         this.setData({
-            popupShow: false
+            popupResultShow: false,
+            popupShareShow: false
         })
+    },
+    onShareBtnClick() {
+        let share = wx.getStorageSync('share') || 1
+        share = share + 1
+
+        setTimeout(_ => {
+            wx.setStorage({
+                key: 'share',
+                data: share
+            })
+            this.setData({
+                popupShareShow: false
+            })
+        }, 2000)
     }
 })

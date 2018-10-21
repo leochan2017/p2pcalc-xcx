@@ -23,8 +23,20 @@ Page {
     padding: 20rpx 30rpx 20rpx;
 }
 
+.leo-cell-group-content-text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333;
+    padding: 20rpx 30rpx 20rpx;
+}
+
 .mt40 {
 	margin-top: 40rpx !important;
+}
+
+.mb40 {
+    margin-bottom: 40rpx !important;
 }
 
 .center {

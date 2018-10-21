@@ -1,22 +1,17 @@
 <view class="page">
     <ad unit-id="adunit-d28f2f31250814ba" style="margin-bottom: 10rpx;"></ad>
-    <view class="page__bd">
-        <!-- <view class="weui-cells__title">各种乱写的说明</view> -->
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{faqList}}" data-index="{{index}}" bindtap="showHelp">
-                <view class="weui-cell__bd">{{item.title}}</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-            </view>
-            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="goMore">
-                <view class="weui-cell__bd">更多好玩的小程序</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-            </view>
-            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="aboutMe">
-                <view class="weui-cell__bd">关于</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
-                    <view hidden="{{isPayLeoMoney}}" class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view>
-                </view>
-            </view>
-        </view>
-    </view>
+    <view class="leo-cell-group-title">说明</view>
+    <van-cell-group>
+        <van-cell title="{{ item.title }}" wx:for="{{ faqList }}" wx:key="{{ item.id }}" data-index="{{ index }}" bind:click="showHelp" icon="{{ item.icon }}" />
+        <van-cell title="更多好玩的小程序" bind:click="goMore" icon="more-o" is-link />
+        <button class="shareBtn" open-type="share" bindtap="onShareBtnClick">
+            <van-cell title="分享出去" icon="share" is-link />
+        </button>
+        <van-cell title="关于" bind:click="aboutMe" icon="info-o" is-link />
+    </van-cell-group>
+    <van-tabbar active="{{ tabbarActive }}" bind:change="onTabbarChange">
+        <van-tabbar-item icon="exchange">计算</van-tabbar-item>
+        <van-tabbar-item icon="question">说明</van-tabbar-item>
+    </van-tabbar>
+    <van-dialog id="van-dialog" />
 </view>
