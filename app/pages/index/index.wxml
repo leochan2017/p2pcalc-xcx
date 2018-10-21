@@ -1,13 +1,29 @@
 <view>
     <view class="leo-cell-group-title">投资信息</view>
     <van-cell-group>
-        <van-field type="digit" label="投资金额：" clearable left-icon="points" value="{{ amount }}" placeholder="请输入投资金额（单位：元）" />
-        <van-field type="digit" label="年化利率：" clearable left-icon="discount" value="{{ falseRate }}" placeholder="请输入年化收益率（单位：%）" />
-        <van-field type="number" label="投资时长：" clearable left-icon="logistics" value="{{ dateLong }}" placeholder="请输入投资时长（单位：天）" icon="arrow" bind:click-icon="selectDateType" />
-        <van-field type="number" label="损耗天数：" clearable left-icon="aim" value="{{ xxDay }}" placeholder="请输入损耗天数（单位：天）" icon="question" />
-        <van-field type="digit" label="损耗金额：" clearable left-icon="after-sale" value="{{ xxMoney1 }}" placeholder="请输入损耗金额（单位：元）" icon="question" />
+        <van-field type="digit" label="投资金额：" clearable left-icon="points" value="{{ amount }}" placeholder="请输入投资金额（单位：元）" error="{{ errorMessage.amount }}" bind:input="inputFn" data-name="amount" />
+        <van-field type="digit" label="年化利率：" clearable left-icon="discount" value="{{ falseRate }}" placeholder="请输入年化收益率（单位：%）" error="{{ errorMessage.falseRate }}" bind:input="inputFn" data-name="falseRate" />
+        <van-field type="number" label="投资时长：" clearable left-icon="logistics" value="{{ dateLong }}" placeholder="请输入投资时长（单位：天）" error="{{ errorMessage.dateLong }}" bind:input="inputFn" data-name="dateLong" />
+        <!-- 下面两个非必填 -->
+        <van-field type="number" label="损耗天数：" clearable left-icon="aim" value="{{ xxDay }}" placeholder="请输入损耗天数（单位：天）" icon="question" bind:click-icon="showTips" bind:input="inputFn" data-name="xxDay"  />
+        <van-field type="digit" label="损耗金额：" clearable left-icon="after-sale" value="{{ xxMoney1 }}" placeholder="请输入损耗金额（单位：元）" icon="question" bind:click-icon="showTips" bind:input="inputFn" data-name="xxMoney1" />
     </van-cell-group>
     <view class="calc-btn center mt40">
-        <van-button size="large" type="warning" bind:click="calcFn">计算</van-button>
+        <van-button size="large" type="warning" bind:click="calcFn">计算真实收益</van-button>
     </view>
+    <van-tabbar active="{{ tabbarActive }}" bind:change="onTabbarChange">
+        <van-tabbar-item icon="exchange">计算</van-tabbar-item>
+        <van-tabbar-item icon="question">说明</van-tabbar-item>
+    </van-tabbar>
+    <van-dialog id="van-dialog" />
+    <van-notify id="van-notify" />
+    <van-popup show="{{ popupShow }}" position="bottom" bind:close="onPopupClose">
+        <view class="leo-cell-group-title">计算结果</view>
+        <van-cell-group>
+          <van-cell title="预期利率" value="{{ falseRate + ' %' }}" />
+          <van-cell title="预期收益" value="{{ falseIncome + ' 元' }}" />
+          <van-cell title="真实利率" value="{{ trueRate + ' %' }}" />
+          <van-cell title="真实收益" value="{{ trueIncome + ' 元' }}" />
+        </van-cell-group>
+    </van-popup>    
 </view>

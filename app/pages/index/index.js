@@ -1,9 +1,18 @@
+import Dialog from '../../lib/vant-weapp/dialog/dialog'
+import Notify from '../../lib/vant-weapp/notify/notify';
 const Util = require('../../utils/util.js')
-// var app = getApp()
+    // var app = getApp()
 Page({
     // 定义转发
     onShareAppMessage: Util.shareConfig,
     data: {
+        tabbarActive: 0,
+        errorMessage: {
+            amount: '',
+            falseRate: '',
+            dateLong: ''
+        },
+        popupShow: false,
         amount: '',
         dayType: '天',
         dateLong: '',
@@ -18,10 +27,10 @@ Page({
     // 选择时长单位
     selectDateType() {
         console.log('来了')
-        let that = this
         wx.showActionSheet({
             itemList: ['天', '月', '年'],
-            success(res) {
+            success: res => {
+                console.log(res)
                 let dayType = this.dayType
 
                 switch (res.tapIndex) {
@@ -36,53 +45,82 @@ Page({
                         break
                 }
 
-                that.setData({
-                    dayType: dayType
+                this.setData({
+                    dayType
                 })
 
-                that.calcFn()
+                // that.calcFn()
             }
         })
     },
     // 输入完毕调用
     inputFn(e) {
         // console.log(e)
-        let obj = {},
-            name = e.currentTarget.dataset.name,
-            val = e.detail.value
+        const name = e.currentTarget.dataset.name
+        const val = e.detail || ''
+        this.setData({
+            [name]: val
+        })
+    },
+    checkData() {
+        const data = this.data
+        const amount = data.amount
+        const falseRate = data.falseRate
+        const dateLong = data.dateLong
+        const paramAmount = 'errorMessage.amount'
+        const paramFalseRate = 'errorMessage.falseRate'
+        const paramDateLong = 'errorMessage.dateLong'
+        let flag = true
 
-        switch (name) {
-            case 'amount':
-                obj = { amount: val }
-                break
-            case 'falseRate':
-                obj = { falseRate: val }
-                break
-            case 'dateLong':
-                obj = { dateLong: val }
-                break
-            case 'xxDay':
-                obj = { xxDay: val }
-                break
-            case 'xxMoney1':
-                obj = { xxMoney1: val }
-                break
+        if (!amount || amount < 1) {
+            this.setData({
+                [paramAmount]: true
+            })
+            flag = false
+        } else {
+            this.setData({
+                [paramAmount]: false
+            })
         }
 
-        this.setData(obj)
+        if (!falseRate || falseRate < 1) {
+            this.setData({
+                [paramFalseRate]: true
+            })
+            flag = false
+        } else {
+            this.setData({
+                [paramFalseRate]: false
+            })
+        }
 
-        this.calcFn() // 因为有微信的数字键盘，所以很放心不用担心输入不是数字？
+        if (!dateLong || dateLong < 1) {
+            this.setData({
+                [paramDateLong]: true
+            })
+            flag = false
+        } else {
+            this.setData({
+                [paramDateLong]: false
+            })
+        }
+
+        return flag
     },
     calcFn() {
-        return console.log('clas')
-        let amount = this.data.amount,
-            falseRate = this.data.falseRate,
-            dateLong = this.data.dateLong, // 投入时长，默认计算单位：天
-            xxMoney1 = this.data.xxMoney1,
-            xxDay = this.data.xxDay,
-            dayType = this.data.dayType,
-            minusDay = 0, // 各种要减的天
-            minusMoney = 0 // 各种要减的钱
+        if (!this.checkData()) {
+            Notify('信息输入有误，请检查')
+            return
+        }
+
+        const amount = this.data.amount
+        const falseRate = this.data.falseRate
+        let dateLong = this.data.dateLong // 投入时长，默认计算单位：天
+        const xxMoney1 = this.data.xxMoney1
+        const xxDay = this.data.xxDay
+        const dayType = this.data.dayType
+        let minusDay = 0 // 各种要减的天
+        let minusMoney = 0 // 各种要减的钱
 
         if (amount == 0 || falseRate == 0 || dateLong == 0 || isNaN(dateLong)) {
             this.setData({
@@ -93,9 +131,9 @@ Page({
             return
         }
 
-        if (dayType == '月') dateLong = dateLong * 30
+        if (dayType === '月') dateLong = dateLong * 30
 
-        if (dayType == '年') dateLong = dateLong * 365
+        if (dayType === '年') dateLong = dateLong * 365
 
         if (xxMoney1 > 0) minusMoney = xxMoney1
 
@@ -118,44 +156,66 @@ Page({
         let trueRate = falseRate
         if (falseIncome != trueIncome || minusDay > 0) {
             trueRate = trueIncome / (amount * (dateLong + minusDay) / 365) * 1000
-            // 因为填了损耗金额，会导致莫名其妙的真实收益率计算出错，所以这么着，原因暂时不知
+                // 因为填了损耗金额，会导致莫名其妙的真实收益率计算出错，所以这么着，原因暂时不知
             if (minusMoney > 0) trueRate = trueRate * 0.1
             trueRate = Util.numberComma(trueRate.toFixed(2))
         }
-
-
-        console.log('预期收益falseIncome', falseIncome)
-        console.log('真实收益trueIncome', trueIncome)
-        console.log('真实利率trueRate', trueRate)
-
+        // console.log('预期收益falseIncome', falseIncome)
+        // console.log('真实收益trueIncome', trueIncome)
+        // console.log('真实利率trueRate', trueRate)
         falseIncome = Util.numberComma(falseIncome.toFixed(2))
         trueIncome = Util.numberComma(trueIncome.toFixed(2))
 
         this.setData({
             falseIncome: falseIncome,
             trueIncome: trueIncome,
-            trueRate: trueRate
+            trueRate: trueRate,
+            popupShow: true
         })
     },
     onLoad() {
-        wx.setNavigationBarTitle({ title: '网贷收益计算器' })
+        wx.setNavigationBarTitle({
+            title: '网贷收益计算器'
+        })
 
         // 测试
-        // this.setData({
-        //     amount: 10000,
-        //     dateLong: 30,
-        //     falseRate: 9.8,
-        // })
-        // this.calcFn()
-
-        // var that = this
-        // //调用应用实例的方法获取全局数据
-        // app.getUserInfo(function(userInfo) {
-        //     //更新数据
-        //     that.setData({
-        //         userInfo: userInfo
-        //     })
-
-        // })
+        this.setData({
+                amount: 100000,
+                dateLong: 30,
+                falseRate: 9.8
+            })
+            // this.calcFn()
+    },
+    showTips(e) {
+        const name = e.currentTarget.dataset.name
+        if (!name) return
+        let title = ''
+        let message = ''
+        switch (name) {
+            case 'xxDay':
+                title = '什么是损耗天数？'
+                message = '指一般的理财产品的认购期，清算期，提现到帐等等。这期间的本金是不计算收益的。如没有则不填写。'
+                break
+            case 'xxMoney1':
+                title = '什么是损耗金额？'
+                message = '指一些的理财产品的年费，充值费，手续费，提现费，投标利息管理费等等。如没有则不填写。'
+                break
+        }
+        Dialog.alert({
+            title, message
+        })
+    },
+    onTabbarChange(event) {
+        // console.log(event.detail)
+        if (event.detail === 1) {
+            wx.navigateTo({
+                url: '../about/about'
+            })
+        }
+    },
+    onPopupClose() {
+        this.setData({
+            popupShow: false
+        })
     }
 })
