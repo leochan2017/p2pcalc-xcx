@@ -9,7 +9,7 @@
         <van-field type="digit" label="损耗金额：" clearable left-icon="after-sale" value="{{ xxMoney1 }}" placeholder="请输入损耗金额（单位：元）" icon="question" bind:click-icon="showTips" bind:input="inputFn" data-name="xxMoney1" />
     </van-cell-group>
     <view class="calc-btn center mt40">
-        <van-button size="large" type="warning" bind:click="calcFn">计算真实收益</van-button>
+        <van-button size="large" type="warning" bind:click="calcFn">计算真实利率</van-button>
     </view>
     <van-tabbar active="{{ tabbarActive }}" bind:change="onTabbarChange">
         <van-tabbar-item icon="exchange">计算</van-tabbar-item>

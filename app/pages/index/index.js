@@ -1,7 +1,6 @@
 import Dialog from '../../lib/vant-weapp/dialog/dialog'
 import Notify from '../../lib/vant-weapp/notify/notify';
 const Util = require('../../utils/util.js')
-    // var app = getApp()
 Page({
     // 定义转发
     onShareAppMessage: Util.shareConfig,
@@ -180,11 +179,10 @@ Page({
 
         // 测试
         this.setData({
-                amount: 100000,
-                dateLong: 30,
-                falseRate: 9.8
-            })
-            // this.calcFn()
+            amount: 100000,
+            dateLong: 30,
+            falseRate: 9.8
+        })
     },
     showTips(e) {
         const name = e.currentTarget.dataset.name
