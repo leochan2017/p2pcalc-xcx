@@ -11,8 +11,9 @@ function numberComma(source, length = 3) {
  * @return {Object}        [Share Config]
  */
 const shareConfig = (option = {}) => {
-    let title = '快来算算你的真实收益'
+    let title = '别再被忽悠了，快来算算你的真实收益！'
     let path = '/pages/index/index'
+    const imageUrl = '../../images/share.png'
 
     if (option.title && option.title != '') title = option.title
 
@@ -20,7 +21,8 @@ const shareConfig = (option = {}) => {
 
     return {
         title: title,
-        path: path
+        path: path,
+        imageUrl: imageUrl
     }
 }
 

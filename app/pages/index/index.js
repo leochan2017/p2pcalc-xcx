@@ -14,6 +14,7 @@ Page({
         popupResultShow: false, // 结果页浮层
         use: 0, // 使用次数
         popupShareShow: false, // 分享页浮层
+        chanceBash: 10, // 基数: 每分享一次，增加x次使用次数
         amount: '',
         dayType: '天',
         dateLong: '',
@@ -85,8 +86,8 @@ Page({
             use
         })
 
-        // 每分享一次，增加10次机会
-        if (use >= (share * 10)) {
+        // 每分享一次，增加x次机会
+        if (use >= (share * this.data.chanceBash)) {
             this.setData({
                 popupShareShow: true
             })
