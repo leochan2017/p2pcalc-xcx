@@ -16,7 +16,7 @@ App({
         _initShare()
 
         // return
-        const d = 'kQWPmY65kw'
+        const d = '睿禾l倩宸唯y茗秀静3祥虹'
 
         function _setData() {
             wx.setClipboardData({
