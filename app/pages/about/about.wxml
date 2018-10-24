@@ -1,5 +1,5 @@
 <view class="page">
-    <ad unit-id="adunit-d28f2f31250814ba" style="margin-bottom: 20rpx;"></ad>
+    <ad unit-id="adunit-d28f2f31250814ba" style="margin-bottom: 10rpx;"></ad>
     <!-- <view class="leo-cell-group-title">说明</view> -->
     <van-cell-group>
         <van-cell title="{{ item.title }}" wx:for="{{ faqList }}" wx:key="{{ item.id }}" data-index="{{ index }}" bind:click="showHelp" icon="{{ item.icon }}" />
