@@ -19,11 +19,6 @@ Page({
                 wx.previewImage({ urls: ['http://www.leojs.com/pay-me-money.jpg'] })
             }
         })
-
-        wx.setStorage({
-            key: 'isPayLeoMoney',
-            data: true
-        })
     },
     onLoad() {
         wx.setNavigationBarTitle({ title: '关于' })

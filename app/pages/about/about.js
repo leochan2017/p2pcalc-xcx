@@ -24,13 +24,13 @@ Page({
         }, {
             id: 3,
             icon: 'exchange',
-            title: '为什么要做这个计算器？',
+            title: '这个计算器有什么用？',
             content: '一般的理财产品大多都不是到期就还本还息。一般的理财产品都有各种XX期，而这期间的本金是不计算收益的。\n\n假设你买了某某理财10万元，号称91天的年化收益率是3.1%。假设认购期5天，到期后提现又5天，那么你实际就被占用了10天的资金所以收益就是:772.88*365/(101*10万)=2.79%。绝对收益是772.88/10万=0.7728%。如果期限较长的理财产品这些认购期，清算期这样的时间也许可以忽略不计。\n\n总的来说，年化收益率，绝对不是看他声称的数字，而要看实际的收入数字。'
         }, {
             id: 4,
             icon: 'exchange-record',
-            title: '公众号关联本小程序',
-            content: '欢淫欢淫，AppID(小程序ID): wx540226fe722e5773'
+            title: '我的公众号如何关联这个小程序？',
+            content: '哎呀老铁，你真有眼光！\n\n1.登录微信公众平台\n\n2.进入“小程序管理”\n\n3.点击“添加”按钮\n\n4.选择“关联小程序”\n\n5.扫码验证身份\n\n6.输入AppID: wx540226fe722e5773\n\n7.发送关联邀请\n\n8.等待我方通过邀请'
         }]
     },
     showHelp(e) {
@@ -113,6 +113,22 @@ Page({
         wx.setStorage({
             key: 'share',
             data: share
+        })
+    },
+    // 打赏作者
+    payMeMoney() {
+        wx.navigateToMiniProgram({
+            appId: 'wx18a2ac992306a5a4',
+            path: 'pages/apps/largess/detail?id=cII2eMPUxog%3D',
+            success: succ => {
+                wx.setStorage({
+                    key: 'isPayLeoMoney',
+                    data: true
+                })
+            },
+            fail: err => {
+                wx.previewImage({ urls: ['http://www.leojs.com/pay-me-money.jpg'] })
+            }
         })
     }
 })
