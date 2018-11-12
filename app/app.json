@@ -10,5 +10,8 @@
         "navigationBarTitleText": "WeChat",
         "navigationBarTextStyle": "black",
         "backgroundColor": "#F6F6F6"
-    }
+    },
+    "navigateToMiniProgramAppIdList": [
+        "wx18a2ac992306a5a4"
+    ]
 }
