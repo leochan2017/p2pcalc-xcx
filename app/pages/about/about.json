@@ -1,9 +1,1 @@
-{
-	"usingComponents": {
-	  "van-cell": "../../lib/vant-weapp/cell/index",
-	  "van-cell-group": "../../lib/vant-weapp/cell-group/index",
-	  "van-dialog": "../../lib/vant-weapp/dialog/index",
-	  "van-tabbar": "../../lib/vant-weapp/tabbar/index",
-  		"van-tabbar-item": "../../lib/vant-weapp/tabbar-item/index"
-	}
-}
+{}
