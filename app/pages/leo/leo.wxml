@@ -4,14 +4,15 @@
             <image src="../../images/logo.png"></image>
         </view>
         <view class="title">
-            <text>网贷收益计算器 v2.2.2</text>
+            <text>网贷收益计算器 v2.2.3</text>
         </view>
         <view class="detail">
             <text>还你真实的数值</text>
         </view>
         <view class="payButton">
             <view class="payButton-btn">
-                <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeMoney">微信打赏
+                <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeMoney">
+                    微信打赏
                 </button>
             </view>
             <!-- <view hidden="{{!canUseSetClipboardData}}">
@@ -23,7 +24,8 @@
                 </button>
             </view> -->
             <view class="payButton-btn" hidden="{{!canUseSetClipboardData}}">
-                <button class="weui-btn mini-btn" type="primary" size="mini" open-type="share" bindtap="onShareBtnClick">分享出去
+                <button class="weui-btn mini-btn" type="primary" size="mini" open-type="share" bindtap="onShareBtnClick">
+                    分享出去
                 </button>
             </view>
         </view>
@@ -36,13 +38,11 @@
             <ad unit-id="adunit-d28f2f31250814ba"></ad>
         </view>
         <view class="weui-footer__text leo-footer">
-            <navigator open-type="navigate" target="miniProgram" app-id="wx18a2ac992306a5a4" path="pages/miniApps/miniApps">更多好玩 >></navigator>
+            <navigator open-type="navigate" target="miniProgram" app-id="wx18a2ac992306a5a4" path="pages/miniApps/miniApps">
+                更多好玩 >>
+            </navigator>
         </view>
-        <view class="weui-footer__text">
-            Copyright © Leojs.com
-        </view>
-        <view class="weui-footer__text">
-            issue: https://github.com/leochan2017/p2pcalc-xcx
-        </view>
+        <view class="weui-footer__text">Copyright © Leojs.com</view>
+        <view class="weui-footer__text">issue: https://github.com/leochan2017/p2pcalc-xcx</view>
     </view>
 </view>

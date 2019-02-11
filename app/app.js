@@ -1,5 +1,10 @@
 App({
-    onLaunch: function() {
+    globalData: {
+        scene: -1
+    },
+    onLaunch(optitons) {
+        this.globalData.scene = optitons.scene
+
         // 初始化分享次数（用于获取机会）
         function _initShare() {
             wx.getStorage({

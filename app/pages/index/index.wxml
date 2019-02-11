@@ -1,4 +1,5 @@
 <view>
+    <van-notice-bar mode="closeable" text="点击右上角 •●• 然后 “添加到我的小程序” 使用更方便哦。" />
     <ad unit-id="adunit-d28f2f31250814ba" style="margin-bottom: 10rpx;"></ad>
     <view class="leo-cell-group-title">投资信息</view>
     <van-cell-group>
@@ -6,7 +7,7 @@
         <van-field type="digit" label="年化利率：" clearable left-icon="discount" value="{{ falseRate }}" placeholder="请输入年化收益率（单位：%）" error="{{ errorMessage.falseRate }}" bind:input="inputFn" data-name="falseRate" />
         <van-field type="number" label="投资时长：" clearable left-icon="logistics" value="{{ dateLong }}" placeholder="请输入投资时长（单位：天）" error="{{ errorMessage.dateLong }}" bind:input="inputFn" data-name="dateLong" />
         <!-- 下面两个非必填 -->
-        <van-field type="number" label="损耗天数：" clearable left-icon="aim" value="{{ xxDay }}" placeholder="请输入损耗天数（单位：天）" icon="question" bind:click-icon="showTips" bind:input="inputFn" data-name="xxDay"  />
+        <van-field type="number" label="损耗天数：" clearable left-icon="aim" value="{{ xxDay }}" placeholder="请输入损耗天数（单位：天）" icon="question" bind:click-icon="showTips" bind:input="inputFn" data-name="xxDay" />
         <van-field type="digit" label="损耗金额：" clearable left-icon="after-sale" value="{{ xxMoney1 }}" placeholder="请输入损耗金额（单位：元）" icon="question" bind:click-icon="showTips" bind:input="inputFn" data-name="xxMoney1" />
     </van-cell-group>
     <view class="calc-btn center mt40" hidden="{{ popupResultShow || popupShareShow }}">
@@ -21,10 +22,10 @@
     <van-popup show="{{ popupResultShow }}" position="bottom" bind:close="onPopupClose">
         <view class="leo-cell-group-title">计算结果</view>
         <van-cell-group>
-          <van-cell title="预期利率" value="{{ falseRate + ' %' }}" />
-          <van-cell title="预期收益" value="{{ falseIncome + ' 元' }}" />
-          <van-cell title="真实利率" value="{{ trueRate + ' %' }}" />
-          <van-cell title="真实收益" value="{{ trueIncome + ' 元' }}" />
+            <van-cell title="预期利率" value="{{ falseRate + ' %' }}" />
+            <van-cell title="预期收益" value="{{ falseIncome + ' 元' }}" />
+            <van-cell title="真实利率" value="{{ trueRate + ' %' }}" />
+            <van-cell title="真实收益" value="{{ trueIncome + ' 元' }}" />
         </van-cell-group>
     </van-popup>
     <van-popup show="{{ popupShareShow }}" position="bottom" bind:close="onPopupClose">
@@ -33,7 +34,9 @@
             你已经使用本程序 {{ use }} 次啦，好东西不妨推荐给朋友？本程序永久免费，只需分享即可增加使用次数。
         </view>
         <view class="calc-btn center mt40 mb40">
-            <van-button size="large" type="warning" open-type="share" bind:click="onShareBtnClick">立即分享</van-button>
+            <van-button size="large" type="warning" open-type="share" bind:click="onShareBtnClick">
+                立即分享
+            </van-button>
         </view>
     </van-popup>
 </view>

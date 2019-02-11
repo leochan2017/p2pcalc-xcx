@@ -24,6 +24,7 @@
         "van-tabbar": "./lib/vant-weapp/tabbar/index",
         "van-tabbar-item": "./lib/vant-weapp/tabbar-item/index",
         "van-notify": "./lib/vant-weapp/notify/index",
-        "van-popup": "./lib/vant-weapp/popup/index"
+        "van-popup": "./lib/vant-weapp/popup/index",
+        "van-notice-bar": "./lib/vant-weapp/notice-bar/index"
     }
 }
