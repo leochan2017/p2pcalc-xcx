@@ -14,7 +14,7 @@
             </button>
             <van-cell title="关于" bind:click="aboutMe" icon="info-o" is-link />
         </van-cell-group>
-        <ad unit-id="adunit-d28f2f31250814ba" style="margin-top: 20rpx;"></ad>
+        <ad unit-id="adunit-55a710c76a165983" style="margin-top: 20rpx;"></ad>
     </view>
     <van-tabbar active="{{ tabbarActive }}" bind:change="onTabbarChange">
         <van-tabbar-item icon="exchange">计算</van-tabbar-item>

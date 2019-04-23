@@ -1,30 +1,31 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/about/about",
-        "pages/leo/leo"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black",
-        "backgroundColor": "#F6F6F6"
-    },
-    "navigateToMiniProgramAppIdList": [
-        "wx18a2ac992306a5a4"
-    ],
-    "usingComponents": {
-        "van-cell": "./lib/vant-weapp/cell/index",
-        "van-cell-group": "./lib/vant-weapp/cell-group/index",
-        "van-field": "./lib/vant-weapp/field/index",
-        "van-button": "./lib/vant-weapp/button/index",
-        "van-icon": "./lib/vant-weapp/icon/index",
-        "van-dialog": "./lib/vant-weapp/dialog/index",
-        "van-tabbar": "./lib/vant-weapp/tabbar/index",
-        "van-tabbar-item": "./lib/vant-weapp/tabbar-item/index",
-        "van-notify": "./lib/vant-weapp/notify/index",
-        "van-popup": "./lib/vant-weapp/popup/index",
-        "van-notice-bar": "./lib/vant-weapp/notice-bar/index"
-    }
+  "pages": [
+    "pages/index/index",
+    "pages/about/about",
+    "pages/leo/leo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F6F6F6"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx18a2ac992306a5a4"
+  ],
+  "usingComponents": {
+    "van-cell": "./lib/vant-weapp/cell/index",
+    "van-cell-group": "./lib/vant-weapp/cell-group/index",
+    "van-field": "./lib/vant-weapp/field/index",
+    "van-button": "./lib/vant-weapp/button/index",
+    "van-icon": "./lib/vant-weapp/icon/index",
+    "van-dialog": "./lib/vant-weapp/dialog/index",
+    "van-tabbar": "./lib/vant-weapp/tabbar/index",
+    "van-tabbar-item": "./lib/vant-weapp/tabbar-item/index",
+    "van-notify": "./lib/vant-weapp/notify/index",
+    "van-popup": "./lib/vant-weapp/popup/index",
+    "van-notice-bar": "./lib/vant-weapp/notice-bar/index"
+  },
+  "sitemapLocation": "sitemap.json"
 }

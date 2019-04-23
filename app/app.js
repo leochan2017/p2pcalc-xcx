@@ -3,6 +3,15 @@ App({
         scene: -1
     },
     onLaunch(optitons) {
+        // console.log('onLaunch')
+
+        let intersitialAd = wx.createInterstitialAd({
+            adUnitId: 'adunit-085d2716964ba304'
+        })
+
+        intersitialAd.show().catch(err => console.log(err.errMsg))
+
+
         this.globalData.scene = optitons.scene
 
         // 初始化分享次数（用于获取机会）
