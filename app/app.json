@@ -1,9 +1,5 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/about/about",
-    "pages/leo/leo"
-  ],
+  "pages": ["pages/index/index", "pages/about/about", "pages/leo/leo"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -11,9 +7,7 @@
     "navigationBarTextStyle": "black",
     "backgroundColor": "#F6F6F6"
   },
-  "navigateToMiniProgramAppIdList": [
-    "wx18a2ac992306a5a4"
-  ],
+  "navigateToMiniProgramAppIdList": ["wx18a2ac992306a5a4"],
   "usingComponents": {
     "van-cell": "./lib/vant-weapp/cell/index",
     "van-cell-group": "./lib/vant-weapp/cell-group/index",

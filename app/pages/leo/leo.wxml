@@ -4,7 +4,7 @@
             <image src="../../images/logo.png"></image>
         </view>
         <view class="title">
-            <text>网贷收益计算器 v2.2.6</text>
+            <text>网贷收益计算器 v2.2.7</text>
         </view>
         <view class="detail">
             <text>还你真实的数值</text>
@@ -34,9 +34,6 @@
         </view> -->
     </view>
     <view class="weui-footer weui-footer_fixed-bottom">
-        <view class="page_ad">
             <ad unit-id="adunit-6f1940f9061e9c44"></ad>
-        </view>
-        <view class="weui-footer__text">Copyright © Leo</view>
     </view>
 </view>
