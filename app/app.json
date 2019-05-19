@@ -1,5 +1,9 @@
 {
-  "pages": ["pages/index/index", "pages/about/about", "pages/leo/leo"],
+  "pages": [
+    "pages/index/index",
+    "pages/leo/leo",
+    "pages/about/about"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -7,7 +11,13 @@
     "navigationBarTextStyle": "black",
     "backgroundColor": "#F6F6F6"
   },
-  "navigateToMiniProgramAppIdList": ["wx18a2ac992306a5a4"],
+  "navigateToMiniProgramAppIdList": [
+    "wx18a2ac992306a5a4",
+    "wxb30c12d2e291b24b",
+    "wx540226fe722e5773",
+    "wxd14b213ec08339ce",
+    "wx41bab989844cba23"
+  ],
   "usingComponents": {
     "van-cell": "./lib/vant-weapp/cell/index",
     "van-cell-group": "./lib/vant-weapp/cell-group/index",
@@ -19,7 +29,7 @@
     "van-tabbar-item": "./lib/vant-weapp/tabbar-item/index",
     "van-notify": "./lib/vant-weapp/notify/index",
     "van-popup": "./lib/vant-weapp/popup/index",
-    "van-notice-bar": "./lib/vant-weapp/notice-bar/index"
-  },
-  "sitemapLocation": "sitemap.json"
+    "van-notice-bar": "./lib/vant-weapp/notice-bar/index",
+    "i-card": "./lib/card/index"
+  }
 }
