@@ -42,7 +42,7 @@ Page({
             message: item.content,
             closeOnClickOverlay: true,
             confirmButtonText: '原来如此'
-        }).then(() => {}).catch(() => {})
+        }).then(() => { }).catch(() => { })
     },
     aboutMe() {
         wx.navigateTo({
@@ -50,14 +50,8 @@ Page({
         })
     },
     goMore() {
-        wx.navigateToMiniProgram({
-            appId: 'wx18a2ac992306a5a4',
-            path: 'pages/miniApps/miniApps',
-            fail: err => {
-                wx.showToast({
-                    title: '失败了，别点了'
-                })
-            }
+        wx.navigateTo({
+            url: '../recommend/recommend'
         })
     },
     // 检查是否需要出现红点

@@ -4,7 +4,7 @@ App({
     // 是否大于204版本
     isMore204: true,
     // 是否输出console
-    debug: false
+    debug: true
   },
   onLaunch(optitons) {
     try {

@@ -31,6 +31,8 @@ Page({
             title: '网贷收益计算器'
         })
 
+        Util.showAdChaPin()
+
         // dev code
         // this.setData({
         //     amount: 100000,

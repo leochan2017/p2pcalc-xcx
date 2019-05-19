@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/recommend/recommend",
     "pages/leo/leo",
     "pages/about/about"
   ],

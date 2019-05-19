@@ -1,4 +1,4 @@
-const APP = getApp()
+const APP = getApp() || {}
 
 function numberComma(source, length = 3) {
     source = String(source).split('.')
@@ -30,16 +30,17 @@ const shareConfig = (option = {}) => {
 
 /** 展示激励式广告 */
 const showAdJiLi = () => {
-    APP.globalData.debug && console.log('来啦老弟 APP.globalData', APP.globalData)
+    const globalData = APP.globalData || {}
+    globalData.debug && console.log('来啦老弟 globalData', globalData)
 
     const today = new Date().getDate()
 
     /** 展示广告 */
     function _showAd() {
-        if (APP.globalData.isMore204 && typeof wx.createRewardedVideoAd === 'function') {
-            APP.globalData.debug && console.log('展示激励广告')
+        if (globalData.isMore204 && typeof wx.createRewardedVideoAd === 'function') {
+            globalData.debug && console.log('展示激励广告')
             const videoAd = wx.createRewardedVideoAd({
-                adUnitId: 'adunit-ff76dd10ecad5eba'
+                adUnitId: 'adunit-3286cb6e78dee865'
             })
 
             if (typeof videoAd.load === 'function') {
@@ -57,10 +58,10 @@ const showAdJiLi = () => {
         // 先判断今天是否展示过激励广告了
         try {
             const lastadjili = wx.getStorageSync('lastadjili')
-            APP.globalData.debug && console.log('lastadjili', lastadjili)
-            APP.globalData.debug && console.log('today', today)
+            globalData.debug && console.log('lastadjili', lastadjili)
+            globalData.debug && console.log('today', today)
             if (lastadjili === today) {
-                APP.globalData.debug && console.log('今天看过激励广告了，明天请早')
+                globalData.debug && console.log('今天看过激励广告了，明天请早')
             } else {
                 _showAd()
             }
@@ -74,7 +75,7 @@ const showAdJiLi = () => {
 const showAdChaPin = () => {
     if (wx.createInterstitialAd) {
         const intersitialAd = wx.createInterstitialAd({
-            adUnitId: 'adunit-9bedc6aec11d47c0'
+            adUnitId: 'adunit-085d2716964ba304'
         })
 
         intersitialAd.show().catch(err => console.log(err.errMsg))
