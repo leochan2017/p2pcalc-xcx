@@ -2,7 +2,9 @@ App({
   globalData: {
     scene: -1,
     // 是否大于204版本
-    isMore204: true
+    isMore204: true,
+    // 是否输出console
+    debug: false
   },
   onLaunch(optitons) {
     try {
@@ -12,12 +14,7 @@ App({
       } else {
         this.globalData.isMore204 = false
       }
-    } catch (e) {}
-
-    // console.log('onLaunch')
-    setTimeout(this.showAdJili, 800)
-
-    this.showAdChaPin()
+    } catch (e) { }
 
     this.globalData.scene = optitons.scene
 
@@ -35,31 +32,6 @@ App({
     }
 
     _initShare()
-  },
-  /** 展示激励式广告 */
-  showAdJili() {
-    if (this.globalData.isMore204 && typeof wx.createRewardedVideoAd === 'function') {
-      let videoAd = wx.createRewardedVideoAd({
-        adUnitId: 'adunit-3286cb6e78dee865'
-      })
-
-      if (typeof videoAd.load === 'function') {
-        videoAd
-          .load()
-          .then(() => videoAd.show())
-          .catch(err => console.log(err.errMsg))
-      }
-    }
-  },
-  /** 展示插屏广告 */
-  showAdChaPin() {
-    if (wx.createInterstitialAd) {
-      let intersitialAd = wx.createInterstitialAd({
-        adUnitId: 'adunit-085d2716964ba304'
-      })
-
-      intersitialAd.show().catch(err => console.log(err.errMsg))
-    }
   }
   /** 复制神秘代码 */
   // initCopyCode() {

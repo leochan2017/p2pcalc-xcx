@@ -155,6 +155,8 @@ Page({
             return
         }
 
+        Util.showAdJiLi()
+
         if (!this.checkChance()) {
             return
         }
@@ -202,7 +204,7 @@ Page({
         let trueRate = falseRate
         if (falseIncome != trueIncome || minusDay > 0) {
             trueRate = trueIncome / (amount * (dateLong + minusDay) / 365) * 1000
-                // 因为填了损耗金额，会导致莫名其妙的真实收益率计算出错，所以这么着，原因暂时不知
+            // 因为填了损耗金额，会导致莫名其妙的真实收益率计算出错，所以这么着，原因暂时不知
             if (minusMoney > 0) trueRate = trueRate * 0.1
             trueRate = Util.numberComma(trueRate.toFixed(2))
         }
@@ -236,7 +238,7 @@ Page({
         }
         Dialog.alert({
             title, message
-        }).then(() => {})
+        }).then(() => { })
     },
     onTabbarChange(event) {
         // console.log(event.detail)
