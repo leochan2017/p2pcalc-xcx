@@ -10,38 +10,51 @@
     margin: 0 auto;
     position: absolute;
     width: 500rpx;
-    top: 10%;
+    top: 8%;
     left: 50%;
     margin-left: -250rpx;
     /*border: 1px solid red;*/
 }
-
-.logo {}
 
 .logo image {
     width: 180rpx;
     height: 180rpx;
 }
 
+.logo image.avatar {
+    border-radius: 50%;
+}
+
 .title {
-    font-size: 40rpx;
-    color: #353535;
+    font-size: 38rpx;
+    color: #888;
     margin-bottom: 10rpx;
 }
 
-.detail {
-    font-size: 34rpx;
+.author {
+     font-size: 30rpx;
     color: #888;
     margin-bottom: 70rpx;
 }
 
-.payButton {
-    line-height: 80rpx;
+.detail {
+    font-size: 28rpx;
+    color: #888;
+    margin-bottom: 14rpx;
 }
 
-.payButton .payButton-btn {
-    display: inline-block;
-    margin: 8rpx 18rpx;
+.payButton {
+    margin-top: 70rpx;
+    line-height: 80rpx;
+    margin-bottom: 10rpx;
+}
+
+.payButton view button {
+    margin: 0 15rpx;
+}
+
+.payButton view button.linkbtn {
+    width: 438rpx;
 }
 
 .page_ad {

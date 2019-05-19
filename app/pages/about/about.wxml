@@ -12,7 +12,7 @@
             <button class="shareBtn" open-type="share" bindtap="onShareBtnClick">
                 <van-cell title="分享出去" icon="share" is-link />
             </button>
-            <van-cell title="关于" bind:click="aboutMe" icon="info-o" is-link />
+            <van-cell title="关于作者" bind:click="aboutMe" icon="info-o" is-link />
         </van-cell-group>
         <ad unit-id="adunit-55a710c76a165983" style="margin-top: 20rpx;"></ad>
     </view>

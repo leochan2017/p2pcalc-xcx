@@ -21,7 +21,7 @@ Page({
         })
     },
     onLoad() {
-        wx.setNavigationBarTitle({ title: '关于' })
+        wx.setNavigationBarTitle({ title: '关于作者' })
     },
     // payMeBtc() {
     //     wx.setClipboardData({
