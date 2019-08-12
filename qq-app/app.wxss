@@ -1,0 +1,57 @@
+Page {
+	background-color: #f7f7f7;
+}
+
+.leo-ad-comm {
+    width: 600rpx;
+    height: 80rpx;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10rpx;
+}
+
+
+.leo-footer {
+    text-decoration: underline;
+}
+
+.leo-cell-group-title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(69,90,100,.6);
+    padding: 20rpx 30rpx 20rpx;
+}
+
+.leo-cell-group-content-text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333;
+    padding: 20rpx 30rpx 20rpx;
+}
+
+.mt40 {
+	margin-top: 40rpx !important;
+}
+
+.mb40 {
+    margin-bottom: 40rpx !important;
+}
+
+.center {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/*去除微信按钮样式*/
+.shareBtn {
+    padding: 0;
+    border: none;
+    text-align: left;
+}
+
+.shareBtn::after {
+    border: none;
+}

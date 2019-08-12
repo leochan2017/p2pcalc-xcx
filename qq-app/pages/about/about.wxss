@@ -1,0 +1,8 @@
+.about-content {
+	margin-top: 20rpx;
+}
+
+.about-ad {
+	width: 650rpx !important;
+	margin: 0 auto 20rpx auto;
+}

@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/recommend/recommend",
+    "pages/leo/leo",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F6F6F6"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx18a2ac992306a5a4",
+    "wxb30c12d2e291b24b",
+    "wx540226fe722e5773",
+    "wxd14b213ec08339ce",
+    "wx41bab989844cba23"
+  ],
+  "usingComponents": {
+    "van-cell": "./lib/vant-weapp/cell/index",
+    "van-cell-group": "./lib/vant-weapp/cell-group/index",
+    "van-field": "./lib/vant-weapp/field/index",
+    "van-button": "./lib/vant-weapp/button/index",
+    "van-icon": "./lib/vant-weapp/icon/index",
+    "van-dialog": "./lib/vant-weapp/dialog/index",
+    "van-tabbar": "./lib/vant-weapp/tabbar/index",
+    "van-tabbar-item": "./lib/vant-weapp/tabbar-item/index",
+    "van-notify": "./lib/vant-weapp/notify/index",
+    "van-popup": "./lib/vant-weapp/popup/index",
+    "van-notice-bar": "./lib/vant-weapp/notice-bar/index",
+    "i-card": "./lib/card/index"
+  }
+}

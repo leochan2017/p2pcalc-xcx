@@ -1,0 +1,46 @@
+<view class="leo-page">
+    <view class="leo-bd">
+        <view class="logo">
+            <image class="avatar" src="../../images/avatar.jpg"></image>
+        </view>
+        <view class="title">
+            <text>网贷收益计算器 v2.3.0</text>
+        </view>
+        <view class="author">
+            <text>By 司马雪琳</text>
+        </view>
+        <view class="detail">
+            <text>程序媛一枚，业余时间开发小程序！</text>
+        </view>
+        <view class="detail">
+            <text>我妈：整天宅在家找得到男朋友才怪！</text>
+        </view>
+        <view class="detail">
+            <text>我：(,,•́ . •̀,,)</text>
+        </view>
+        <view class="payButton">
+            <view class="payButton-btn">
+                <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeMoney">
+                    微信打赏
+                </button>
+                <button class="weui-btn mini-btn" type="primary" size="mini" open-type="share" bindtap="onShareBtnClick">
+                    分享出去
+                </button>
+            </view>
+            <!-- <view hidden="{{!canUseSetClipboardData}}">
+                <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeBtc">BTC打赏
+                </button>
+            </view> -->
+            <!-- <view class="payButton-btn" hidden="{{!canUseSetClipboardData}}">
+                <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeEth">ETH打赏
+                </button>
+            </view> -->
+        </view>
+        <!-- <view class="detail">
+            <text>(打赏过后红点就消失哦)</text>
+        </view> -->
+    </view>
+    <view class="weui-footer weui-footer_fixed-bottom">
+        <ad unit-id="adunit-6f1940f9061e9c44"></ad>
+    </view>
+</view>
