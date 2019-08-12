@@ -1,5 +1,5 @@
 <view class="page">
-    <van-notice-bar mode="closeable" text="点击右上角 •●• 然后 “添加到我的小程序” 使用更方便哦。" />
+    <van-notice-bar mode="closeable" text="点击右上角 •●• 然后 “添加到桌面” 使用更方便哦。" />
     <!-- <view class="about-ad">
         <ad unit-id="adunit-d28f2f31250814ba"></ad>
     </view> -->
@@ -7,14 +7,18 @@
     <view class="about-content">
         <van-cell-group>
             <van-cell title="{{ item.title }}" wx:for="{{ faqList }}" wx:key="{{ item.id }}" data-index="{{ index }}" bind:click="showHelp" icon="{{ item.icon }}" />
+            <!--
             <van-cell title="更多好玩的小程序" bind:click="goMore" icon="add-o" is-link />
             <van-cell title="打赏作者" bind:click="payMeMoney" icon="like-o" is-link />
+            -->
             <button class="shareBtn" open-type="share" bindtap="onShareBtnClick">
                 <van-cell title="分享出去" icon="share" is-link />
             </button>
             <van-cell title="关于作者" bind:click="aboutMe" icon="info-o" is-link />
         </van-cell-group>
+        <!--
         <ad unit-id="adunit-55a710c76a165983" style="margin-top: 20rpx;"></ad>
+        -->
     </view>
     <van-tabbar active="{{ tabbarActive }}" bind:change="onTabbarChange">
         <van-tabbar-item icon="exchange">计算</van-tabbar-item>

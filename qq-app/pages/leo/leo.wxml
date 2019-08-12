@@ -4,7 +4,7 @@
             <image class="avatar" src="../../images/avatar.jpg"></image>
         </view>
         <view class="title">
-            <text>网贷收益计算器 v2.3.0</text>
+            <text>收益计算器 v1.0.0</text>
         </view>
         <view class="author">
             <text>By 司马雪琳</text>
@@ -20,9 +20,11 @@
         </view>
         <view class="payButton">
             <view class="payButton-btn">
+                <!--
                 <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="payMeMoney">
                     微信打赏
                 </button>
+                -->
                 <button class="weui-btn mini-btn" type="primary" size="mini" open-type="share" bindtap="onShareBtnClick">
                     分享出去
                 </button>
@@ -41,6 +43,6 @@
         </view> -->
     </view>
     <view class="weui-footer weui-footer_fixed-bottom">
-        <ad unit-id="adunit-6f1940f9061e9c44"></ad>
+        <!--<ad unit-id="adunit-6f1940f9061e9c44"></ad>-->
     </view>
 </view>

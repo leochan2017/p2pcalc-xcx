@@ -1,20 +1,25 @@
 {
-	"description": "项目配置文件。",
+	"projectid": "1109760940_%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
-		"uglifyFileName": true
+		"autoAudits": false
 	},
+	"qqLibVersion": "1.6.2",
 	"compileType": "miniprogram",
-	"libVersion": "1.6.4",
-	"appid": "wx540226fe722e5773",
-	"projectname": "%E7%9C%9F%E5%AE%9E%E7%90%86%E8%B4%A2%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97%E5%99%A8",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
+	"createTime": 1565591047142,
+	"accessTime": 1565591047142,
+	"packOptions": {
+		"ignore": []
+	},
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"qqappid": "1109760940",
+	"projectname": "%E6%94%B6%E7%9B%8A%E8%AE%A1%E7%AE%97",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -22,6 +27,10 @@
 		},
 		"conversation": {
 			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {

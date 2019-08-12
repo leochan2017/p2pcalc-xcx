@@ -1,6 +1,8 @@
 <view>
-    <van-notice-bar mode="closeable" text="点击右上角 •●• 然后 “添加到我的小程序” 使用更方便哦。" />
+    <van-notice-bar mode="closeable" text="点击右上角 •●• 然后 “添加到桌面” 使用更方便哦。" />
+    <!--
     <ad unit-id="adunit-d28f2f31250814ba" style="margin-bottom: 10rpx;"></ad>
+    -->
     <view class="leo-cell-group-title">投资信息</view>
     <van-cell-group>
         <van-field type="digit" label="投资金额：" clearable left-icon="points" value="{{ amount }}" placeholder="请输入投资金额（单位：元）" error="{{ errorMessage.amount }}" bind:input="inputFn" data-name="amount" />
